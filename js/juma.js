@@ -59,7 +59,6 @@ var juma = {
                 (function (device) {
                     $('#device-' + i).click(function() {
                         juma.device = device;
-                        alert(juma.device);
                     });
                 })(devices[i]);
             }
@@ -76,7 +75,7 @@ var juma = {
             return;
         }
         alert(this.device);
-        var tempUrl = this.baseUrl+'/device/'+this.device.deviceAddress+resource;
+        var tempUrl = this.baseUrl+'/device/'+juma.device.deviceAddress+resource;
         $.getJSON(tempUrl, null, function(data){
             if(success)success(data['value']);
         });
@@ -91,7 +90,7 @@ var juma = {
 			console.log('resource is not be null!');
 			return;
 		}
-        var tempUrl = this.baseUrl+'/device/'+this.device.deviceAddress+resource;
+        var tempUrl = this.baseUrl+'/device/'+juma.device.deviceAddress+resource;
         $.post(tempUrl, params, function(data){
             console.log(JSON.stringify(data));
         });
