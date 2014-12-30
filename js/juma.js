@@ -59,6 +59,7 @@ var juma = {
                 (function (device) {
                     $('#device-' + i).click(function() {
                         juma.device = device;
+                        alert(JSON.stringify(juma.device));
                     });
                 })(devices[i]);
             }
