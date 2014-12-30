@@ -74,7 +74,7 @@ var juma = {
             console.log('resource is not be null!');
             return;
         }
-        alert(this.device);
+        alert(juma.device);
         var tempUrl = this.baseUrl+'/device/'+juma.device.deviceAddress+resource;
         $.getJSON(tempUrl, null, function(data){
             if(success)success(data['value']);
